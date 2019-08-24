@@ -1,0 +1,442 @@
+/* NEW GRID - Menu Burger Icon */
+#menuIcon{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 15% auto 15% auto 15% auto;
+    grid-template-areas: 
+        "."
+        "bOne"
+        "."
+        "bTwo"
+        "."
+        "bThree"
+        "."
+}
+
+#barOne{
+    grid-area: bOne;
+}
+
+#barTwo{
+    grid-area: bTwo;
+}
+
+#barThree{
+    grid-area: bThree;
+}
+
+/* NEW GRID - Navigation Bar Layout */
+#nav{
+    display: grid;
+    grid-template-columns: auto 25% auto 25% auto 25% auto;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+        ". home . exp . contact ."
+}
+
+#home{
+    grid-area: home;
+}
+
+#exp{
+    grid-area: exp;
+
+}
+
+#contact{
+    grid-area: contact;
+}
+
+/* NEW GRID - infoBlocks */
+.ehiInfoBlock{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 45% auto 45%;
+    grid-template-areas: 
+        "ehibp"
+        "."
+        "ehibc"
+}
+
+.ehiPic{
+    grid-area: ehibp;
+    place-self: center;
+}
+
+.ehiContent{
+    grid-area: ehibc;
+    align-self: start;
+}
+
+/* NEW GRID - Home Page Layout: 2 */
+#me{
+    display: grid;
+    grid-template-columns: 1% 98% 1%;
+    grid-template-rows: 30% 5% 65%;
+    grid-template-areas: 
+        ". header ."
+        ". . ."
+        ". slide ."
+}
+
+#meHeader{
+    grid-area: header;
+}
+
+#meSlide{
+    grid-area: slide;
+}
+
+/* NEW GRID - Contact Me Layout */
+#aboutIntro{
+    display: grid;
+    grid-template-columns: 30% auto 60%;
+    grid-template-rows: 5% 90% 5%;
+    grid-template-areas: 
+        ". . ."
+        "pic . info"
+        ". . ."
+}
+
+#aboutPic{
+    grid-area: pic;
+}
+
+#aboutInfo{
+    grid-area: info;
+}
+
+/* NEW GRID - Contact Me Layout */
+#contactMeBox{
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 30% 15% 55%;
+    grid-template-areas: 
+        ". info ."
+        ". . ."
+        ". pic ."
+}
+
+#contactMeInfo{
+    grid-area: info;
+}
+
+#contactMeBtn{
+    grid-area: pic;
+
+    place-self: center;
+}
+
+/* NEW GRID - My Form Layout */
+#myForm{
+    display: grid;
+    grid-template-columns: 5% 80% auto 5% 5%;
+    grid-template-rows: 5% 20% auto 70% auto;
+    grid-template-areas: 
+        ". . . . . "
+        ". mContent mContent mContent ."
+        ". . . . ."
+        ". mForm . social social"
+        ". . . . ."
+}
+
+#mfContent{
+    grid-area: mContent;
+}
+
+/* NEW GRID - My Form Layout */
+#mySocials{
+    grid-area: social;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 25% auto 25% auto 25% auto;
+    grid-template-areas: 
+        "."
+        "face"
+        "."
+        "linked"
+        "."
+        "git"
+        "."
+}
+
+#face{
+    grid-area: face;
+    place-self: center;
+}
+
+#linked{
+    grid-area: linked;
+    place-self: center;
+}
+
+#git{
+    grid-area: git;
+    place-self: center;
+}
+
+/* NEW GRID - My Form Input Layout */
+#mfForm{
+    grid-area: mForm;
+
+    display: grid;
+    grid-template-columns: auto 30% auto 60% auto;
+    grid-template-rows: auto 10% 5% auto 10% 5% auto 10% 5% auto 25% 5% auto 15% auto;
+    grid-template-areas: 
+        ". . . . ."
+        ". oName . iName ."
+        ". . . eName ."
+        ". . . . ."
+        ". oTele . iTele ."
+        ". . . eTele ."
+        ". . . . ."
+        ". oEmail . iEmail ."
+        ". . . eEmail ."
+        ". . . . ."
+        ". oDesc . iDesc ."
+        ". . . eDesc ."
+        ". . . . ."
+        ". . . iSub ."
+        ". . . . ."
+
+}
+
+#inName{
+    grid-area: iName;
+    justify-self: start;
+}
+
+#inTele{
+    grid-area: iTele;
+    justify-self: start;
+}
+
+#inEmail{
+    grid-area: iEmail;
+    justify-self: start;
+}
+
+#inDesc{
+    grid-area: iDesc;
+    justify-self: start;
+}
+
+#inSub{
+    grid-area: iSub;
+    justify-self: end;
+}
+
+#tName{
+    grid-area: oName;
+    justify-self: start;
+}
+
+#tTele{
+    grid-area: oTele;
+    justify-self: start;
+}
+
+#tEmail{
+    grid-area: oEmail;
+    justify-self: start;
+}
+
+#tDesc{
+    grid-area: oDesc;
+    justify-self: start;
+}
+
+#invalidBackN{
+    grid-area: eName;
+}
+
+#invalidBackT{
+    grid-area: eTele;
+}
+
+#invalidBackE{
+    grid-area: eEmail;
+}
+
+#invalidBackD{
+    grid-area: eDesc;
+}
+
+/* NEW GRID - Resume */
+#resume{
+    display: grid;
+    grid-template-columns: auto 80% auto;
+    grid-template-rows: auto 50% auto 30% auto;
+    grid-template-areas: 
+        ". . ."
+        ". rcontent ."
+        ". . ."
+        ". rbutton ."
+        ". . ."
+}
+
+#resumeContent{
+    grid-area: rcontent;
+    justify-self: start;
+}
+
+#resumeButton{
+    grid-area: rbutton;
+    place-self: center;
+}
+
+
+@media screen and (orientation:portrait) {
+    /* NEW GRID - Home Page Info */
+    #ehiInfo{
+        display: grid;
+        grid-template-columns: auto 60% auto;
+        grid-template-rows: auto 20% auto 20% auto 20% auto 20% auto;
+        grid-template-areas: 
+            ". . ."
+            ". ehibOne ."
+            ". . ."
+            ". ehibTwo ."
+            ". . ."
+            ". ehibThree ."
+            ". . ."
+            ". ehibFour ."
+            ". . ."
+    }
+
+    #ehiInfoBlockOne{
+        grid-area: ehibOne;
+    }
+
+    #ehiInfoBlockTwo{
+        grid-area: ehibTwo;
+    }
+
+    #ehiInfoBlockThree{
+        grid-area: ehibThree;
+    }
+
+    #ehiInfoBlockFour{
+        grid-area: ehibFour;
+    }
+
+    /* NEW GRID - About Graphs Layout */
+    #aboutGraphs{
+        display: grid;
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: auto 5% 3% 20% auto 5% 3% 20% auto 5% 3% 20% auto;
+        grid-template-areas: 
+            ". . ."
+            ". abtLang ."
+            ". . ."
+            ". abtLangGra ."
+            ". . ."
+            ". abtSw ."
+            ". . ."
+            ". abtSwGra ."
+            ". . ."
+            ". abtExp ."
+            ". . ."
+            ". abtExpGra ."
+            ". . ."
+    }
+
+    #aboutLang{
+        grid-area: abtLang;
+        align-self: center;
+    }
+
+    #aboutLangContain{
+        grid-area: abtLangGra;
+    }
+
+    #aboutSW{
+        grid-area: abtSw;
+        align-self: center;
+    }
+
+    #aboutSWContain{
+        grid-area: abtSwGra;
+    }
+
+    #aboutExp{
+        grid-area: abtExp;
+        align-self: center;
+    }
+
+    #aboutExpContain{
+        grid-area: abtExpGra;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    /* NEW GRID - Home Page Info */
+    #ehiInfo{
+        display: grid;
+        grid-template-columns: auto 20% auto 20% auto 20% auto 20% auto;
+        grid-template-rows: 100%;
+        grid-template-areas: 
+            ". ehibOne . ehibTwo . ehibThree . ehibFour ."
+    }
+
+    #ehiInfoBlockOne{
+        grid-area: ehibOne;
+    }
+
+    #ehiInfoBlockTwo{
+        grid-area: ehibTwo;
+    }
+
+    #ehiInfoBlockThree{
+        grid-area: ehibThree;
+    }
+
+    #ehiInfoBlockFour{
+        grid-area: ehibFour;
+    }
+
+    /* NEW GRID - About Graphs Layout */
+    #aboutGraphs{
+        display: grid;
+        grid-template-columns: 5% 30% auto 55% 5%;
+        grid-template-rows:  5% auto 5% auto 5% auto 5%;
+        grid-template-areas:
+            ". . . . ."
+            ". abtLang . abtLangGra ."
+            ". . . . ."
+            ". abtSw . abtSwGra ."
+            ". . . . ."
+            ". abtExp . abtExpGra ."
+            ". . . . ."
+    }
+
+    #aboutLang{
+        grid-area: abtLang;
+        align-self: center;
+    }
+
+    #aboutLangContain{
+        grid-area: abtLangGra;
+    }
+
+    #aboutSW{
+        grid-area: abtSw;
+        align-self: center;
+    }
+
+    #aboutSWContain{
+        grid-area: abtSwGra;
+    }
+
+    #aboutExp{
+        grid-area: abtExp;
+        align-self: center;
+    }
+
+    #aboutExpContain{
+        grid-area: abtExpGra;
+    }
+}

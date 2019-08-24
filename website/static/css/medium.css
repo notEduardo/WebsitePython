@@ -1,0 +1,13 @@
+html{
+    font-size: 12px;
+}
+
+.name{
+    background-color: transparent;
+}
+
+@media screen and (orientation:landscape) {
+    html{
+        font-size: 11px;
+    }
+}

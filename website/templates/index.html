@@ -1,0 +1,152 @@
+{% extends "skeleton.html" %}
+
+{% block cssFiles%}
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Anton|Bree+Serif|Questrial|Source+Sans+Pro' rel='stylesheet'>
+
+<!-- My Style Sheets -->
+<link href="{{ url_for('static',filename='css/style.css') }}" type="text/css" rel="stylesheet"/>
+<link href="{{ url_for('static',filename='css/myGrids.css') }}" type="text/css" rel="stylesheet"/>
+<link href="{{ url_for('static',filename='css/individual.css') }}" type="text/css" rel="stylesheet"/>
+
+<!-- Media Query Style -->
+<link href="{{ url_for('static',filename='css/xsmall.css') }}" type="text/css" rel="stylesheet" media="screen and (max-width: 599px)"/>
+<link href="{{ url_for('static',filename='css/small.css') }}" type="text/css" rel="stylesheet" media="screen and (min-width: 600px)"/>
+<link href="{{ url_for('static',filename='css/medium.css') }}" type="text/css" rel="stylesheet" media="screen and (min-width: 900px)"/>
+<link href="{{ url_for('static',filename='css/large.css') }}" type="text/css" rel="stylesheet" media="screen and (min-width: 1200px)"/>
+<link href="{{ url_for('static',filename='css/xlarge.css') }}" type="text/css" rel="stylesheet" media="screen and (min-width: 1800px)"/>
+{% endblock %}
+
+{% block jsFiles%}
+<!-- Jquery -->
+<script src="{{ url_for('static',filename='js/jQuery/jQuery.min.js') }}"></script>
+
+<!-- All green sock files - TweenLite, CSSPlugin, TimelineLite -->
+<script src="{{ url_for('static',filename='js/GSAP/TweenLite.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/GSAP/TimelineLite.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/GSAP/CSSPlugin.min.js') }}"></script>
+
+<!-- All Scrollmagic files - Scrollmagic, GSAP PLugin -->
+<script src="{{ url_for('static',filename='js/ScrollMagic/ScrollMagic.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/ScrollMagic/animation.gsap.min.js') }}"></script>
+
+<!-- Charts.js -->
+<script src="{{ url_for('static',filename='js/Chart/Chart.min.js') }}"></script>
+
+<!-- Animations -->
+<script src="{{ url_for('static',filename='js/animations.js') }}"></script>
+
+<!-- My language code -->
+<script src="{{ url_for('static',filename='js/data.js') }}"></script>
+
+<!-- My app code -->
+<script src="{{ url_for('static',filename='js/app.js') }}"></script>
+{% endblock %}
+
+{% block landingWindow%}
+<div id="mainPage">
+     <div id=scrollBox></div>
+
+     <div id="menuIcon" onclick="burgerNav();">
+          <div class="myBar" id="barOne"></div>  
+          <div class="myBar" id="barTwo"></div>  
+          <div class="myBar" id="barThree"></div>  
+     </div> 
+
+     <div id="burgerNav">
+          <button onclick="changing(1);" id="bhome" class="burgerlinks"></button>
+          <button onclick="changing(2);" id="bexp" class="burgerlinks"></button>
+          <button onclick="changing(3);" id="bcontact" class="burgerlinks"></button>
+     </div>
+
+     <div id="nav">
+          <button onclick="changing(1);" id="home" class="links"></button>
+          <button onclick="changing(2);" id="exp" class="links"></button>
+          <button onclick="changing(3);" id="contact" class="links"></button>
+     </div>
+
+     <button onclick="changeLang();" id="lang"></button>
+
+     <div id="fullName">
+          <div class="name">Eduardo</div>
+          <div class="name">Gonzalez</div>
+     </div>
+
+     <div id="words"></div>
+     <div id="navLinks">
+          <img src="/static/images/exp.png" onclick="changing(2);" class="navBtns" alt="templateIcon">
+          <img src="/static/images/home.png" onclick="changing(1);" class="navBtns" alt="homeIcon">
+          <img src="/static/images/contact.png" onclick="changing(3);" class="navBtns" alt="I made this">
+     </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="mainSpacer"></div>
+<div id="content"></div>
+{% endblock %}
+
+{% block infoForm %}
+<div id="myForm">
+     <div class="formContent" id="mfContent"></div>
+     <form method="POST" action="" class="formContent" id="mfForm">
+          {{ form.csrf_token }}
+
+          <div class="formText" id="tName"></div>
+          {% if form.inName.errors %}
+               {{ form.inName(class_="invalidInput") }}
+               <div class="errBack" id="invalidBackN">
+                    {% for error in form.inName.errors %}
+                         <spam>{{ error }}</spam>
+                    {% endfor%}
+               </div>
+          {% else %}
+               {{ form.inName(class_="myInput") }}
+          {% endif %}
+          
+          <div class="formText" id="tTele"></div>
+          {% if form.inTele.errors %}
+               {{ form.inTele(class_="invalidInput") }}
+               <div class="errBack" id="invalidBackT">
+                    {% for error in form.inTele.errors %}
+                         <spam>{{ error }}</spam>
+                    {% endfor%}
+               </div>
+          {% else %}
+               {{ form.inTele(class_="myInput") }}
+          {% endif %}
+          
+          <div class="formText" id="tEmail"></div>
+          {% if form.inEmail.errors %}
+               {{ form.inEmail(class_="invalidInput") }}
+               <div class="errBack" id="invalidBackE">
+                    {% for error in form.inEmail.errors %}
+                         <spam>{{ error }}</spam>
+                    {% endfor%}
+               </div>
+          {% else %}
+               {{ form.inEmail(class_="myInput") }}
+          {% endif %}
+          
+          <div class="formText" id="tDesc"></div>
+          {% if form.inDesc.errors %}
+               {{ form.inDesc(class_="invalidInput") }}
+               <div class="errBack" id="invalidBackD">
+                    {% for error in form.inDesc.errors %}
+                         <spam>{{ error }}</spam>
+                    {% endfor%}
+               </div>
+          {% else %}
+               {{ form.inDesc(class_="myInput") }}
+          {% endif %}
+          
+          <input type="submit" class="myButton" id="inSub" value="Submit">
+     </form>
+
+     <div id="mySocials">
+          <a href= "https://www.facebook.com/taco.gonzalez/about?section=contact-info&pnref=about" id="face"><img src="/static/images/facebook.png" class="socialBtns" alt="fbIcon"></a>
+          <a href= "https://github.com/notEduardo" id="git"><img src="/static/images/github.png" class="socialBtns" alt="gitIcon"></a>
+          <a href= "https://www.linkedin.com/in/eduardo-gonzalez-613b51128" id="linked"><img src="/static/images/linkedin.png" class="socialBtns" alt="linkdIcon"></a>
+     </div>
+</div>
+{% endblock %}

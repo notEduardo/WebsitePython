@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"f>
+        <title> Eduardo's Website </title>
+        <meta name= "viewport" content= "width=device-width, initial-scale=1.0"/>
+
+        {% block cssFiles%}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block jsFiles%}
+        {% endblock %}
+
+        {% block landingWindow%}
+        {% endblock %}
+
+        <div id="website">
+            <div id="flash">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="fMsg">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            </div>
+
+            {% block content %}
+            {% endblock %}
+
+            {% block infoForm %}
+            {% endblock %}
+
+            {% if "scrollform" in scroll%}
+            <script>
+                var scrollError = true;
+            </script>
+            {% elif "normal" in scroll %}
+            <script>
+                var scrollError = false;
+            </script>
+            {% endif %}
+        </div>
+    </body>
+
+</html>
